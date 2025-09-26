@@ -1,0 +1,89 @@
+/* Importa os estilos base */
+@import url('base.css');
+
+/* Estilos do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--cor-fundo); /* Usa variável do base.css */
+    color: var(--cor-texto-escuro); /* Cor clara definida em base.css */
+    background-image: url("../images/imagem_fundo_3.png");
+    background-repeat:  no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 1px 1px 5px #ffffff;
+}
+
+/* Logo da empresa */
+header img {
+    width: 200px;      /* Define a largura da logo */
+    margin: 10px;      /* Adiciona espaçamento em todos os lados da imagem */
+}
+
+/* Nome da empresa organizado em coluna */
+header .empresa {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dest img{
+    width: 300px;
+    margin: 10px;
+}
+
+.nav-custom{
+    background-color: var(--cor-menu);
+}
+
+.nav-link{
+    font-size: 20px;
+    color: var(--cor-texto-claro);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 5s ease;
+    
+}
+
+.nav-link:hover{
+    background-color: #11cf00;
+    box-shadow: 0px 5px 20px rgba(0, 255, 17, 0.411);
+    color: black;
+    transform: translateY(-1px);
+}
+
+/* Responsividade: cabeçalho vira coluna em telas pequenas */
+@media screen and (max-width:600px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+
+/* Links do menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+/* Área principal de conteúdo */
+main {
+    border: solid 1px black;
+    width: 90%;
+    margin: 10px auto;
+    max-width: 1024px;
+    padding: 10px;
+    background: var(--cor-fundo);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    background-image: url("../images/imagem_fundo_main.png");
+    background-repeat:  no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
+
+
+
