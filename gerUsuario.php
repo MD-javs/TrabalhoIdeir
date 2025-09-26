@@ -17,41 +17,43 @@ if (filter_has_var(INPUT_GET, "id")) {
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/baseSite.css">
     <title>Gerenciar Usuário</title>
 </head>
-<body class="container mt-4">
-    <h3>Gerenciar Usuário</h3>
-    <form method="post" action="dbUsuario.php" enctype="multipart/form-data" class="row g-3">
+<body class="container ">
+    <h3 class="titulo">Gerenciar_Usuário</h3>
+    <br>
+    <form method="post" action="dbUsuario.php" enctype="multipart/form-data" class="row g-3 site">
         <input type="hidden" name="idUsuario" value="<?php echo $dados['id_usuario'] ?? ''; ?>">
 
-        <div class="col-md-6">
+        <div class="barra">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" 
+            <input type="text" name="nome" id="nome" class="form-control barra" 
                 value="<?php echo $dados['nome'] ?? ''; ?>" required>
         </div>
 
-        <div class="col-md-6">
+        <div class="barra">
             <label for="email" class="form-label">E-mail</label>
-            <input type="email" name="email" id="email" class="form-control" 
+            <input type="email" name="email" id="email" class="form-control barra" 
                 value="<?php echo $dados['email'] ?? ''; ?>" required>
         </div>
 
-        <div class="col-md-6">
+        <div class="barra">
             <label for="senha" class="form-label">Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" required>
+            <input type="password" name="senha" id="senha" class="form-control barra" required>
         </div>
 
-        <div class="col-md-6">
+        <div class="barra">
             <label for="foto" class="form-label">Foto</label>
-            <input type="file" name="foto" id="foto" class="form-control" accept=".jpg,.jpeg,.png" required>
+            <input type="file" name="foto" id="foto" class="form-control barra" accept=".jpg,.jpeg,.png" required>
             <?php if (!empty($dados['foto'])): ?>
                 <img src="uploads/<?php echo $dados['foto']; ?>" width="100" class="mt-2 rounded">
             <?php endif; ?>
         </div>
 
         <div class="col-12">
-            <button type="submit" name="btnGravar" class="btn btn-success">Salvar</button>
-            <a href="usuario.php" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" name="btnGravar" class="btn btn-success botao">Salvar</button>
+            <a href="usuario.php" class="btn btn-secondary botao">Cancelar</a>
         </div>
     </form>
 </body>
